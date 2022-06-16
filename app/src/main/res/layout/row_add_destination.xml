@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <AutoCompleteTextView
+            android:id="@+id/txt_addDestination"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:background="@drawable/edittext_circle_layout"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableTint="@color/red"
+            android:elevation="10dp"
+            android:hint="         Search Location"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/closeDestination"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_close"
+            app:backgroundTint="@color/white"
+            app:elevation="0dp"
+            app:fabCustomSize="20dp"
+            app:maxImageSize="20dp"
+            app:tint="@color/primaryColor" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.HomeFragment">
+
+
+    <fragment
+        android:id="@+id/homeMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.HomeFragment" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="25dp"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:id="@+id/autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:elevation="10dp"
+                android:hint="         Search Location"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_circle_layout"
+                android:drawableStart="@drawable/ic_location"
+                android:drawableTint="@color/primaryColor"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <HorizontalScrollView
+        android:id="@+id/placesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coordinate"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/placesGroup"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true" />
+
+    </HorizontalScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnMapType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/placesList"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_map_type"
+        app:backgroundTint="@color/white"
+        app:fabCustomSize="40dp"
+        app:tint="@color/primaryColor" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/enableTraffic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnMapType"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_traffic"
+        app:backgroundTint="@color/white"
+        app:fabCustomSize="40dp"
+        app:tint="@color/itemTextColor" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/currentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enableTraffic"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_my_location"
+        app:backgroundTint="@color/white"
+        app:fabCustomSize="50dp"
+        app:tint="@color/primaryColor" />
+
+    <HorizontalScrollView
+
+        android:id="@+id/placeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coordinate"
+        android:layout_marginTop="5dp"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearResturant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Restaurant"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_restaurant"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearHospitals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Hospitals"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_hospital"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearATM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="ATM"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_atm"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearGasStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="GasStation"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_gas_station"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearSuperMarket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="SuperMarket"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_shopping_cart"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearHotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Hotel"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_hotel"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearPharmacies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Pharmacies"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_pharmacy"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearCarWash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="CarWash"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_car_wash"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nearSalons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Salons"
+                android:textColor="@color/white"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/primaryColor"
+                app:chipIcon="@drawable/ic_saloon"
+                app:chipIconSize="15dp"
+                app:chipIconTint="@color/white"
+                app:chipStrokeWidth="1dp" />
+
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/homeBottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="70dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Direction" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

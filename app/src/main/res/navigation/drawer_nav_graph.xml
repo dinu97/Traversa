@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_nav_graph"
+    app:startDestination="@id/btnHome">
+
+    <fragment
+        android:id="@+id/btnHome"
+        android:name="com.example.travelguidapplication.Fragments.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/btnCategory"
+        android:name="com.example.travelguidapplication.Fragments.CategoryFragment"
+        tools:layout="@layout/fragment_category" />
+
+
+    <fragment
+        android:id="@+id/btnSetting"
+        android:name="com.example.travelguidapplication.Fragments.SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/btnViewTravelPlan"
+        android:name="com.example.travelguidapplication.Fragments.ViewTravelPlanFragment"
+        tools:layout="@layout/fragment_view_travel_plan" />
+
+    <fragment
+        android:id="@+id/btnWeatherUpdate"
+        android:name="com.example.travelguidapplication.Fragments.WeatherUpdateFragment"
+        tools:layout="@layout/fragment_weather_update" />
+
+</navigation>

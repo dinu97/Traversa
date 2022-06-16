@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MapActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:background="@color/white"
+        android:weightSum="5"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <AutoCompleteTextView
+                android:id="@+id/txt_current"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="4"
+                android:elevation="10dp"
+                android:layout_gravity="center"
+                android:textSize="14dp"
+                android:hint="         Search Location"
+                android:background="@drawable/edittext_circle_layout"
+                android:drawableStart="@drawable/ic_location"
+                android:drawableTint="@color/primaryColor"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="4">
+                <AutoCompleteTextView
+                    android:id="@+id/txt_destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="4"
+                    android:elevation="10dp"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+                    android:hint="         Search Location"
+                    android:background="@drawable/edittext_circle_layout"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawableTint="@color/red"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnAddDestination"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_add"
+                    app:backgroundTint="@color/white"
+                    app:elevation="0dp"
+                    app:fabCustomSize="40dp"
+                    app:maxImageSize="40dp"
+                    app:tint="@color/primaryColor" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/destinationList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/destinationMap"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Fragments.HomeFragment" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFindDirection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:text="Find path"
+                android:textSize="12dp"
+                android:textColor="@color/primaryColor"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:elevation="10dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCreateTravelPlans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:textSize="12dp"
+                android:text="Create Plan"
+                android:textColor="@color/primaryColor"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:elevation="10dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
